@@ -18,9 +18,10 @@
   <depend>image_transport</depend>
   <depend>tf_conversions</depend>
   <depend>nodelet</depend>
+  <depend>cmake_modules</depend>
 
   <export>
     <nodelet plugin="${prefix}/nodelet_plugins.xml" />
   </export>
-  
+
 </package>

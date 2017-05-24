@@ -5,7 +5,6 @@ project(image_undistort)
 # Set compile flags (-Ofast actually makes a big difference over -O3 here (maybe 20% faster)
 set(CMAKE_CXX_FLAGS "-std=c++11 -Ofast")
 
-find_package(Eigen3 REQUIRED)
 find_package(catkin REQUIRED COMPONENTS
   roscpp
   roslib
@@ -14,6 +13,7 @@ find_package(catkin REQUIRED COMPONENTS
   image_transport
   tf_conversions
   nodelet
+  cmake_modules
 )
 
 catkin_package(
@@ -23,18 +23,17 @@ catkin_package(
 
 include_directories(
   include
-  ${EIGEN3_INCLUDE_DIR}
   ${catkin_INCLUDE_DIRS}
 )
 
-add_library(${PROJECT_NAME}_nodelet 
-  src/image_undistort_nodelet.cpp 
+add_library(${PROJECT_NAME}_nodelet
+  src/image_undistort_nodelet.cpp
   src/stereo_info_nodelet.cpp
   src/stereo_undistort_nodelet.cpp
   src/stereo_info.cpp
   src/stereo_undistort.cpp
-  src/camera_parameters.cpp 
-  src/image_undistort.cpp 
+  src/camera_parameters.cpp
+  src/image_undistort.cpp
   src/undistorter.cpp)
 
 target_link_libraries(${PROJECT_NAME}_nodelet
