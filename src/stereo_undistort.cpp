@@ -182,6 +182,9 @@ void StereoUndistort::sendCameraInfo(const std_msgs::Header& header,
     camera_info.distortion_model = "plumb_bob";
   }
 
+  camera_info.binning_x = 1;
+  camera_info.binning_y = 1;
+
   if (side == CameraSide::LEFT) {
     if (io == CameraIO::INPUT) {
       left_camera_info_input_pub_.publish(camera_info);
