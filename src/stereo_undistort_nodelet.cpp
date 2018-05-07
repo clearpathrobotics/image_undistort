@@ -15,6 +15,4 @@ class StereoUndistortNodelet : public nodelet::Nodelet {
 };
 }
 
-PLUGINLIB_DECLARE_CLASS(image_undistort, StereoUndistortNodelet,
-                        image_undistort::StereoUndistortNodelet,
-                        nodelet::Nodelet);
+PLUGINLIB_EXPORT_CLASS(image_undistort::StereoUndistortNodelet, nodelet::Nodelet);
