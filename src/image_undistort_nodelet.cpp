@@ -15,6 +15,4 @@ class ImageUndistortNodelet : public nodelet::Nodelet {
 };
 }
 
-PLUGINLIB_DECLARE_CLASS(image_undistort, ImageUndistortNodelet,
-                        image_undistort::ImageUndistortNodelet,
-                        nodelet::Nodelet);
+PLUGINLIB_EXPORT_CLASS(image_undistort::ImageUndistortNodelet, nodelet::Nodelet);
